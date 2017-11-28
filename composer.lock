@@ -4,8 +4,52 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "369f7ac9d28d6bd6c2fa93d20160f02c",
+    "content-hash": "e60f7b030aa8753ed77158b831c61584",
     "packages": [
+        {
+            "name": "cstabor/screw",
+            "version": "1.0.5.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cstabor/screw.git",
+                "reference": "5cd7acd036f4b852d6e2103ee5280cb31e80a580"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cstabor/screw/zipball/5cd7acd036f4b852d6e2103ee5280cb31e80a580",
+                "reference": "5cd7acd036f4b852d6e2103ee5280cb31e80a580",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helper.php"
+                ],
+                "psr-4": {
+                    "Screw\\": "src/Screw",
+                    "ScrewTest\\": "test/Screw"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "cstabor",
+                    "email": "cstabor@hotmail.com"
+                }
+            ],
+            "description": "some interest tool",
+            "keywords": [
+                "tool",
+                "util"
+            ],
+            "time": "2017-11-21T10:00:16+00:00"
+        },
         {
             "name": "doctrine/instantiator",
             "version": "1.0.5",

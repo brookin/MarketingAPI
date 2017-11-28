@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: gavin
- * Date: 11/26/17
- * Time: 7:50 PM
+ * Date: 11/28/17
+ * Time: 11:54 PM
  */
 
 namespace Brookin\MarketingAPITest;
@@ -11,11 +11,8 @@ namespace Brookin\MarketingAPITest;
 use Brookin\MarketingAPI\Advertiser\Advertiser;
 use Brookin\MarketingAPI\Advertiser\AdvertiserGetRequest;
 use Brookin\MarketingAPI\Advertiser\AdvertiserGetResponse;
-use Brookin\MarketingAPI\Client;
-use Brookin\MarketingAPI\Oauth\AuthorizeRequest;
-use Brookin\MarketingAPI\Oauth\AuthorizeResponse;
 
-class ClientTest extends \PHPUnit_Framework_TestCase
+class AdvertiserTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testSend() {
@@ -26,5 +23,4 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $client = new Advertiser();
         $client->get($request, $response);
     }
-
 }

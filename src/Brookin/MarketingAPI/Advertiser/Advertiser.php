@@ -18,7 +18,11 @@ class Advertiser extends Client
         $this->send(self::GET, $this->getPath(__METHOD__), $request, $response);
     }
 
-    public function add(AdvertiserGetRequest $request, AdvertiserGetResponse $response) {
+    public function add(AdvertiserAddRequest $request, AdvertiserAddResponse $response) {
+        $this->send(self::POST, $this->getPath(__METHOD__), $request, $response);
+    }
+
+    public function update(AdvertiserUpdateRequest $request, AdvertiserUpdateResponse $response) {
         $this->send(self::POST, $this->getPath(__METHOD__), $request, $response);
     }
 
