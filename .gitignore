@@ -1,2 +1,4 @@
 /vendor/
 token.php
+.DS_Store
+*.jpg

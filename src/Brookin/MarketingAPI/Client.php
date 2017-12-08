@@ -1,16 +1,12 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: gavin
  * Date: 11/26/17
  * Time: 7:23 PM
  */
 
 namespace Brookin\MarketingAPI;
 
-
-use Brookin\MarketingAPI\Advertiser\AdvertiserGetRequest;
-use Brookin\MarketingAPI\Advertiser\AdvertiserGetResponse;
 use GuzzleHttp\RequestOptions;
 
 class Client
@@ -59,7 +55,7 @@ class Client
         return $this->path;
     }
 
-    public function send($method, $path, Request $request, Response $response) {
+    public function send($method, $path, Request $request, Response $response, $upload = false) {
 
         $url = $this->urlPrefix.$path;
 
@@ -69,10 +65,19 @@ class Client
                 RequestOptions::QUERY => $request->toArray(),
             ]);
         } else if ($method == 'POST') {
-            $options = array_merge_recursive($this->defaultOptions, [
-                RequestOptions::BODY => $request->toArray(),
-            ]);
+            if (!$upload) {
+                $options = array_merge_recursive($this->defaultOptions, [
+                    RequestOptions::FORM_PARAMS => $request->toArray(),
+                ]);
+            } else {
+                $tmp = $request->toArray();
+                $options = array_merge_recursive($this->defaultOptions, [
+                    RequestOptions::MULTIPART => array_values($tmp),
+                ]);
+            }
         }
+
+        println($options);
 
         $res = $this->client->request($method, $url, $options);
 

@@ -1,7 +1,6 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: gavin
  * Date: 11/26/17
  * Time: 7:50 PM
  */
@@ -20,7 +19,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
     public function testSend() {
         $request = new AdvertiserGetRequest();
-        $request->setAccountId(1089);
+        $request->setAccountId(MARKETING_API_AGENCY_ID);
 
         $response = new AdvertiserGetResponse();
         $client = new Advertiser();
