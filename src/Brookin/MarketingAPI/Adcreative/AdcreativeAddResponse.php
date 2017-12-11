@@ -8,7 +8,9 @@
 namespace Brookin\MarketingAPI\Adcreative;
 
 
-class AdcreativeAddResponse
+use Brookin\MarketingAPI\Response;
+
+class AdcreativeAddResponse extends Response
 {
 
     /**

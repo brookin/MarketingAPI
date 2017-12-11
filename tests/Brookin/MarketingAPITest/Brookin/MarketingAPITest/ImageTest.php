@@ -18,7 +18,8 @@ class ImageTest extends \PHPUnit_Framework_TestCase
     {
         $request = new ImageAddRequest();
         $response = new ImageAddResponse();
-        $file = './tests/rule.jpg';
+//        $file = './tests/rule.jpg';
+        $file = './160x210.png';
         $client = new Image();
         $request->accountId = [
             'name' => 'account_id',

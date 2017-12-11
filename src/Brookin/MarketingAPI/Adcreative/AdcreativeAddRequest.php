@@ -8,7 +8,9 @@
 namespace Brookin\MarketingAPI\Adcreative;
 
 
-class AdcreativeAddRequest
+use Brookin\MarketingAPI\Request;
+
+class AdcreativeAddRequest extends Request
 {
     /**
      * @var int
@@ -55,5 +57,5 @@ class AdcreativeAddRequest
     /**
      * @var string
      */
-    public $productRefsId;
+//    public $productRefsId;
 }

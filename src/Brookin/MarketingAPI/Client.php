@@ -15,6 +15,7 @@ class Client
     public $urlPrefix = 'https://sandbox-api.e.qq.com/v1.0';
 
     const POST = 'POST';
+
     const GET = 'GET';
 
     public $client;
