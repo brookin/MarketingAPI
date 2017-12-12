@@ -18,4 +18,12 @@ class Campaign extends RestClient
         $this->send(self::POST, $this->getPath(__METHOD__), $request, $response);
     }
 
+    public function update(CampaignUpdateRequest $request, CampaignUpdateResponse $response) {
+        $this->send(self::POST, $this->getPath(__METHOD__), $request, $response);
+    }
+
+    public function get(CampaignGetRequest $request, CampaignGetResponse $response) {
+        $this->send(self::GET, $this->getPath(__METHOD__), $request, $response);
+    }
+
 }

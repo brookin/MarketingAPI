@@ -18,4 +18,12 @@ class Adcreative extends RestClient
         $this->send(self::POST, $this->getPath(__METHOD__), $request, $response);
     }
 
+    public function update(AdcreativeUpdateRequest $request, AdcreativeUpdateResponse $response) {
+        $this->send(self::POST, $this->getPath(__METHOD__), $request, $response);
+    }
+
+    public function get(AdcreativeGetRequest $request, AdcreativeGetResponse $response) {
+        $this->send(self::GET, $this->getPath(__METHOD__), $request, $response);
+    }
+
 }

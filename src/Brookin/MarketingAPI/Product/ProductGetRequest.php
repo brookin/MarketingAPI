@@ -12,5 +12,9 @@ use Brookin\MarketingAPI\Request;
 
 class ProductGetRequest extends Request
 {
+    public $accountId;
 
+    public $productType;
+
+    public $productRefsId;
 }

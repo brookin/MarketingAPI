@@ -12,5 +12,5 @@ use Brookin\MarketingAPI\Response;
 
 class AdAddResponse extends Response
 {
-
+    public $adId;
 }

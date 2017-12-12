@@ -13,4 +13,15 @@ use Brookin\MarketingAPI\Request;
 class CampaignUpdateRequest extends Request
 {
 
+    public $accountId;
+
+    public $campaignId;
+
+    public $campaignName;
+
+    public $dailyBudget;
+
+    public $configuredStatus;
+
+    public $speedMode;
 }

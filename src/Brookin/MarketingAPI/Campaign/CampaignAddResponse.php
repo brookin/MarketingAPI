@@ -12,5 +12,8 @@ use Brookin\MarketingAPI\Response;
 
 class CampaignAddResponse extends Response
 {
-
+    /**
+     * @var int
+     */
+    public $campaignId;
 }

@@ -11,4 +11,8 @@ namespace Brookin\MarketingAPI\Advertiser;
 class AdvertiserUpdateResponse
 {
 
+    /**
+     * @var int
+     */
+    public $accountId;
 }

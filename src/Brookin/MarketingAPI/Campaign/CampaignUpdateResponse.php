@@ -8,7 +8,11 @@
 namespace Brookin\MarketingAPI\Campaign;
 
 
-class CampaignUpdateResponse
+use Brookin\MarketingAPI\Response;
+
+class CampaignUpdateResponse extends Response
 {
+
+    public $campaignId;
 
 }

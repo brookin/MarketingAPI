@@ -13,4 +13,7 @@ use Brookin\MarketingAPI\Request;
 class TargetingGetRequest extends Request
 {
 
+    public $accountId;
+
+    public $targetingId;
 }

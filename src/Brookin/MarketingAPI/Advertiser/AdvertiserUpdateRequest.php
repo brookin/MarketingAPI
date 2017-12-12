@@ -11,4 +11,10 @@ namespace Brookin\MarketingAPI\Advertiser;
 class AdvertiserUpdateRequest
 {
 
+    public $accountId;
+
+    public $dailyBudget;
+
+    public $corporationName;
+
 }

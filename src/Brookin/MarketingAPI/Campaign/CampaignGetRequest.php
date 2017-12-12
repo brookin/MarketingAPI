@@ -13,4 +13,5 @@ use Brookin\MarketingAPI\Request;
 class CampaignGetRequest extends Request
 {
 
+    public $accountId;
 }
