@@ -23,7 +23,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
         $client = new Image();
         $request->accountId = [
             'name' => 'account_id',
-            'contents' => MARKETING_API_AGENCY_ID
+            'contents' => MARKETING_API_ADVERTISER_ID
         ];
         $request->signature = [
             'name' => 'signature',

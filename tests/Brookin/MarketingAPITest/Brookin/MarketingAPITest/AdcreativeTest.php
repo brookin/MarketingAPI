@@ -21,7 +21,7 @@ class AdcreativeTest extends \PHPUnit_Framework_TestCase
         $request->adcreativeName = 'crt'.date('Y-m-d H:i:s');
         $request->adcreativeTemplateId = 2;
         $elements = [
-            'image' => MARKETING_API_IMAGE_ID_CREATIVE160x210,
+            'image' => MARKETING_API_IMAGE_ID_160x210,
             'title' => 'title123',
         ];
         $request->adcreativeElements = json_encode($elements);
