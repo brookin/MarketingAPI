@@ -21,4 +21,6 @@ class AdAddRequest extends Request
 
     public $adName;
 
+    public $configuredStatus;
+
 }

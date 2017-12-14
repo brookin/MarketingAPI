@@ -37,7 +37,7 @@ class AdcreativeTest extends \PHPUnit_Framework_TestCase
         $service->add($request, $response);
     }
 
-    public function testUpdate() {
+    public function _testUpdate() {
         $request = new AdcreativeUpdateRequest();
         $response = new AdcreativeUpdateResponse();
         $request->accountId = MARKETING_API_ADVERTISER_ID;

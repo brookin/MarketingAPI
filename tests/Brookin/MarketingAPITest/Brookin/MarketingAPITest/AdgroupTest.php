@@ -38,7 +38,7 @@ class AdgroupTest extends \PHPUnit_Framework_TestCase
         $service->add($request, $response);
     }
 
-    public function testUpdate() {
+    public function _testUpdate() {
         $request = new AdgroupUpdateRequest();
         $response = new AdgroupUpdateResponse();
         $request->accountId = MARKETING_API_ADVERTISER_ID;
@@ -64,8 +64,6 @@ class AdgroupTest extends \PHPUnit_Framework_TestCase
         $request = new AdgroupGetRequest();
         $response = new AdgroupGetResponse();
         $request->accountId = MARKETING_API_ADVERTISER_ID;
-//        $request->campaignId = MARKETING_API_CAMPAIGN_ID;
-//        $request->targetingId = MARKETING_API_TARGETING_ID;
         $request->adgroupId = MARKETING_API_ADGROUP_ID;
 
         $service = new Adgroup();

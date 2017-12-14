@@ -79,10 +79,7 @@ class Client
         }
 
         println($options);
-
         $res = $this->client->request($method, $url, $options);
-
-        print_r($res->getBody()->getContents());
-
+        print_r(json_decode($res->getBody()->getContents(), true));
     }
 }

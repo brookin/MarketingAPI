@@ -15,23 +15,6 @@ class AdvertiserGetRequest extends Request
     /**
      * @var int
      */
-    private $accountId;
-
-    /**
-     * @return int
-     */
-    public function getAccountId()
-    {
-        return $this->accountId;
-    }
-
-    /**
-     * @param int $accountId
-     */
-    public function setAccountId($accountId)
-    {
-        $this->accountId = $accountId;
-    }
-
+    public $accountId;
 
 }

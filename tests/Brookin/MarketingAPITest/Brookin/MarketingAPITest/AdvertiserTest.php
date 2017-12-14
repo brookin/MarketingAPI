@@ -16,7 +16,7 @@ use Brookin\MarketingAPI\Advertiser\AdvertiserGetResponse;
 class AdvertiserTest extends \PHPUnit_Framework_TestCase
 {
 
-    public function testAdd() {
+    public function _testAdd() {
         $request = new AdvertiserAddRequest();
         $response = new AdvertiserAddResponse();
         $client = new Advertiser();
@@ -31,7 +31,7 @@ class AdvertiserTest extends \PHPUnit_Framework_TestCase
 
     public function testGet() {
         $request = new AdvertiserGetRequest();
-        $request->setAccountId(MARKETING_API_AGENCY_ID);
+        $request->accountId = MARKETING_API_ADVERTISER_ID;
         $response = new AdvertiserGetResponse();
         $client = new Advertiser();
         $client->get($request, $response);

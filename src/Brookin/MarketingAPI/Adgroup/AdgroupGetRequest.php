@@ -13,4 +13,7 @@ use Brookin\MarketingAPI\Request;
 class AdgroupGetRequest extends Request
 {
 
+    public $accountId;
+
+    public $adgroupId;
 }
