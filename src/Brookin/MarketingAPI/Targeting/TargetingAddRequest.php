@@ -23,7 +23,7 @@ class TargetingAddRequest extends Request
     public $targetingName;
 
     /**
-     * @var
+     * @var TargetingInfo
      */
     public $targeting;
 
