@@ -17,7 +17,7 @@ use Brookin\MarketingAPI\Targeting\TargetingUpdateResponse;
 
 class TargetingTest extends \PHPUnit_Framework_TestCase
 {
-    public function _testAdd()
+    public function testAdd()
     {
         $request = new TargetingAddRequest();
         $response = new TargetingAddResponse();
@@ -26,6 +26,9 @@ class TargetingTest extends \PHPUnit_Framework_TestCase
 
         $service = new Targeting();
         $service->add($request, $response);
+        println($response);
+//        $response->targetingId = null;
+        $this->assertNotNull($response->targetingId, __FUNCTION__);
     }
 
     public function testUpdate()

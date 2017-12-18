@@ -18,4 +18,22 @@ class ProductAddResponse extends Response
      */
     public $productRefsId;
 
+    /**
+     * @return string
+     */
+    public function getProductRefsId()
+    {
+        return $this->productRefsId;
+    }
+
+    /**
+     * @param string $productRefsId
+     */
+    public function setProductRefsId($productRefsId)
+    {
+        $this->productRefsId = $productRefsId;
+    }
+
+
+
 }

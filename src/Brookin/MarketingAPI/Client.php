@@ -78,8 +78,21 @@ class Client
             }
         }
 
-        println($options);
+//        println($options);
         $res = $this->client->request($method, $url, $options);
-        print_r(json_decode($res->getBody()->getContents(), true));
+        $result = json_decode($res->getBody()->getContents(), true);
+        if (!isset($result['code'])) {
+            throw new \Exception('result structure error', 100);
+        }
+
+        if ($result['code'] != 0) {
+            throw new \Exception('request failed, code: '.$result['code'], 101);
+        }
+
+        $data = json_decode(json_encode($result['data']));
+//        println($data);
+        $mapper = new \JsonMapper();
+        $mapper->map($data, $response);
+
     }
 }

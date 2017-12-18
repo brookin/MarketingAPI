@@ -17,4 +17,22 @@ class TargetingAddResponse extends Response
      * @var int
      */
     public $targetingId;
+
+    /**
+     * @return int
+     */
+    public function getTargetingId()
+    {
+        return $this->targetingId;
+    }
+
+    /**
+     * @param int $targetingId
+     */
+    public function setTargetingId($targetingId)
+    {
+        $this->targetingId = $targetingId;
+    }
+
+
 }

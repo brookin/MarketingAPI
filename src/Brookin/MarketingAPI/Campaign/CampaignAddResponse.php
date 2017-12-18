@@ -16,4 +16,22 @@ class CampaignAddResponse extends Response
      * @var int
      */
     public $campaignId;
+
+    /**
+     * @return int
+     */
+    public function getCampaignId()
+    {
+        return $this->campaignId;
+    }
+
+    /**
+     * @param int $campaignId
+     */
+    public function setCampaignId($campaignId)
+    {
+        $this->campaignId = $campaignId;
+    }
+
+
 }

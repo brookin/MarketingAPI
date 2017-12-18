@@ -18,7 +18,7 @@ use Brookin\MarketingAPI\Campaign\CampaignUpdateResponse;
 class CampaignTest extends \PHPUnit_Framework_TestCase
 {
 
-    public function _testAdd() {
+    public function testAdd() {
         $request = new CampaignAddRequest();
         $response = new CampaignAddResponse();
 
@@ -32,9 +32,11 @@ class CampaignTest extends \PHPUnit_Framework_TestCase
 
         $service = new Campaign();
         $service->add($request, $response);
+
+        println($response);
     }
 
-    public function _testUpdate() {
+    public function testUpdate() {
         $request = new CampaignUpdateRequest();
         $response = new CampaignUpdateResponse();
 
