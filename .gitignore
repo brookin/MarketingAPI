@@ -2,4 +2,3 @@
 token.php
 .DS_Store
 *[.jpg|.png]
-composer.lock
