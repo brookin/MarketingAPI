@@ -1,4 +1,5 @@
 /vendor/
 token.php
 .DS_Store
-*[.jpg|.png]
+*.jpg
+*.png
