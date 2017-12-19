@@ -52,6 +52,8 @@ class TargetingTest extends \PHPUnit_Framework_TestCase
 
         $service = new Targeting();
         $service->get($request, $response);
+
+        print_r($response);
     }
 
 }

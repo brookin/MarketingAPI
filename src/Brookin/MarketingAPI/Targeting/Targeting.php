@@ -7,7 +7,6 @@
 
 namespace Brookin\MarketingAPI\Targeting;
 
-
 use Brookin\MarketingAPI\RestClient;
 
 class Targeting extends RestClient
@@ -21,6 +20,10 @@ class Targeting extends RestClient
     }
 
     public function get(TargetingGetRequest $request, TargetingGetResponse $response) {
+        $this->send(self::GET, $this->getPath(__METHOD__), $request, $response);
+    }
+
+    public function getTags(TargetingTagsGetRequest $request, TargetingTagsGetResponse $response) {
         $this->send(self::GET, $this->getPath(__METHOD__), $request, $response);
     }
 }

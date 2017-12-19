@@ -23,4 +23,11 @@ class TargetingGetResponse extends Response
      */
     public $targetingId;
 
+    /**
+     * @var string
+     */
+    public $targetingName;
+
+
+
 }
