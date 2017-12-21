@@ -38,7 +38,14 @@ class Client
 
     public function getModuleName()
     {
-        return strtolower((new \ReflectionClass(static::class))->getShortName());
+        $suffix = '_service';
+        $suffixLen = strlen($suffix);
+        $nameUnderscore = strtolower(Request::uncamelize((new \ReflectionClass(static::class))->getShortName()));
+        $moduleName = $nameUnderscore;
+        if (substr($nameUnderscore, 0 - $suffixLen, $suffixLen) === $suffix) {
+            $moduleName = substr($nameUnderscore, 0, strlen($nameUnderscore) - $suffixLen);
+        }
+        return $moduleName;
     }
 
     public function getActionName($methodName)
@@ -56,6 +63,27 @@ class Client
         return $this->path;
     }
 
+    public function getRequestPath(Request $request)
+    {
+        $this->path = sprintf('/%s/%s', $this->getModuleName(), $request->getApiRequestMethod());
+        return $this->path;
+    }
+
+    public function doPost(Request $request, Response $response, $upload = false)
+    {
+        $this->send(self::POST, $this->getRequestPath($request), $request, $response , $upload);
+    }
+
+    public function doGet(Request $request, Response $response)
+    {
+        $this->send(self::GET, $this->getRequestPath($request), $request, $response);
+    }
+
+    public function isUpload(Request $request)
+    {
+
+    }
+
     public function send($method, $path, Request $request, Response $response, $upload = false) {
 
         $url = $this->urlPrefix.$path;
@@ -66,18 +94,14 @@ class Client
                 RequestOptions::QUERY => $request->toArray(),
             ]);
         } else if ($method == 'POST') {
-            if (!$upload) {
+            if ($request->getGuzzleRequestEnctype() === RequestOptions::MULTIPART) {
+                $options = array_merge_recursive($this->defaultOptions, $request->toFormDataArray());
+            } else {
                 $options = array_merge_recursive($this->defaultOptions, [
                     RequestOptions::FORM_PARAMS => $request->toArray(),
                 ]);
-            } else {
-                $tmp = $request->toArray();
-                $options = array_merge_recursive($this->defaultOptions, [
-                    RequestOptions::MULTIPART => array_values($tmp),
-                ]);
             }
         }
-
 //        println($options);
         $res = $this->client->request($method, $url, $options);
         $result = json_decode($res->getBody()->getContents(), true);
@@ -86,6 +110,7 @@ class Client
         }
 
         if ($result['code'] != 0) {
+            println($result);
             throw new \Exception('request failed, code: '.$result['code'], 101);
         }
 

@@ -11,7 +11,7 @@ namespace Brookin\MarketingAPI\Adcreative;
 use Brookin\MarketingAPI\Client;
 use Brookin\MarketingAPI\RestClient;
 
-class Adcreative extends RestClient
+class AdcreativeService extends RestClient
 {
 
     public function add(AdcreativeAddRequest $request, AdcreativeAddResponse $response) {

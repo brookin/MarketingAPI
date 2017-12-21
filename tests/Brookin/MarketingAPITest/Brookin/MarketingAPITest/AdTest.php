@@ -7,7 +7,7 @@
 
 namespace Brookin\MarketingAPITest;
 
-use Brookin\MarketingAPI\Ad\Ad;
+use Brookin\MarketingAPI\Ad\AdService;
 use Brookin\MarketingAPI\Ad\AdAddRequest;
 use Brookin\MarketingAPI\Ad\AdAddResponse;
 use Brookin\MarketingAPI\Ad\AdGetRequest;
@@ -28,7 +28,7 @@ class AdTest extends \PHPUnit_Framework_TestCase
         $request->adName = 'adname'.date('Y-m-d H:i:s');
         $request->configuredStatus = 'AD_STATUS_NORMAL';
 
-        $service = new Ad();
+        $service = new AdService();
         $service->add($request, $response);
     }
 
@@ -41,7 +41,7 @@ class AdTest extends \PHPUnit_Framework_TestCase
         $request->adcreativeId = MARKETING_API_ADCREATIVE_ID;
         $request->adName = 'adname'.date('Y-m-d H:i:s');
 
-        $service = new Ad();
+        $service = new AdService();
         $service->update($request, $response);
     }
 
@@ -54,7 +54,7 @@ class AdTest extends \PHPUnit_Framework_TestCase
         $request->adcreativeId = MARKETING_API_ADCREATIVE_ID;
         $request->adName = 'adname'.date('Y-m-d H:i:s');
 
-        $service = new Ad();
+        $service = new AdService();
         $service->get($request, $response);
     }
 

@@ -10,7 +10,7 @@ namespace Brookin\MarketingAPI\Image;
 
 use Brookin\MarketingAPI\Client;
 
-class Image extends Client
+class ImageService extends Client
 {
 
     public function getPath($method) {

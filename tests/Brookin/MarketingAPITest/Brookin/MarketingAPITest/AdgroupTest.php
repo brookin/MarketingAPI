@@ -7,7 +7,7 @@
 
 namespace Brookin\MarketingAPITest;
 
-use Brookin\MarketingAPI\Adgroup\Adgroup;
+use Brookin\MarketingAPI\Adgroup\AdgroupService;
 use Brookin\MarketingAPI\Adgroup\AdgroupAddRequest;
 use Brookin\MarketingAPI\Adgroup\AdgroupAddResponse;
 use Brookin\MarketingAPI\Adgroup\AdgroupGetRequest;
@@ -34,7 +34,7 @@ class AdgroupTest extends \PHPUnit_Framework_TestCase
         $request->billingEvent = 'BILLINGEVENT_CLICK';
         $request->bidAmount = 500;
 
-        $service = new Adgroup();
+        $service = new AdgroupService();
         $service->add($request, $response);
     }
 
@@ -55,7 +55,7 @@ class AdgroupTest extends \PHPUnit_Framework_TestCase
 //        $request->billingEvent = 'BILLINGEVENT_CLICK';
 //        $request->bidAmount = 600;
 
-        $service = new Adgroup();
+        $service = new AdgroupService();
         $service->update($request, $response);
     }
 
@@ -66,7 +66,7 @@ class AdgroupTest extends \PHPUnit_Framework_TestCase
         $request->accountId = MARKETING_API_ADVERTISER_ID;
         $request->adgroupId = MARKETING_API_ADGROUP_ID;
 
-        $service = new Adgroup();
+        $service = new AdgroupService();
         $service->get($request, $response);
     }
 

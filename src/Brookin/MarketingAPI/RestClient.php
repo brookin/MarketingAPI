@@ -16,4 +16,9 @@ class RestClient extends Client
         return $this->path;
     }
 
+    public function getRequestPath(Request $request)
+    {
+        $this->path = sprintf('/%ss/%s', $this->getModuleName(), $request->getApiRequestMethod());
+        return $this->path;
+    }
 }

@@ -7,7 +7,7 @@
 
 namespace Brookin\MarketingAPITest;
 
-use Brookin\MarketingAPI\Campaign\Campaign;
+use Brookin\MarketingAPI\Campaign\CampaignService;
 use Brookin\MarketingAPI\Campaign\CampaignAddRequest;
 use Brookin\MarketingAPI\Campaign\CampaignAddResponse;
 use Brookin\MarketingAPI\Campaign\CampaignGetRequest;
@@ -30,7 +30,7 @@ class CampaignTest extends \PHPUnit_Framework_TestCase
         $request->configuredStatus = 'AD_STATUS_NORMAL';
         $request->speedMode = 'SPEED_MODE_FAST';
 
-        $service = new Campaign();
+        $service = new CampaignService();
         $service->add($request, $response);
 
         println($response);
@@ -45,7 +45,7 @@ class CampaignTest extends \PHPUnit_Framework_TestCase
         $request->campaignName = '推广计划 update '.date('Ymd H:i:s');
 
 
-        $service = new Campaign();
+        $service = new CampaignService();
         $service->update($request, $response);
     }
 
@@ -57,8 +57,9 @@ class CampaignTest extends \PHPUnit_Framework_TestCase
         $request->campaignId = MARKETING_API_CAMPAIGN_ID;
 
 
-        $service = new Campaign();
+        $service = new CampaignService();
         $service->get($request, $response);
+        println($response);
     }
 
 }

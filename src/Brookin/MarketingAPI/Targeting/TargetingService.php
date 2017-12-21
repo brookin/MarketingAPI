@@ -9,7 +9,7 @@ namespace Brookin\MarketingAPI\Targeting;
 
 use Brookin\MarketingAPI\RestClient;
 
-class Targeting extends RestClient
+class TargetingService extends RestClient
 {
     public function add(TargetingAddRequest $request, TargetingAddResponse $response) {
         $this->send(self::POST, $this->getPath(__METHOD__), $request, $response);

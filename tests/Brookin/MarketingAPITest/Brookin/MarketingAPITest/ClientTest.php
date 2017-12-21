@@ -7,7 +7,7 @@
 
 namespace Brookin\MarketingAPITest;
 
-use Brookin\MarketingAPI\Advertiser\Advertiser;
+use Brookin\MarketingAPI\Advertiser\AdvertiserService;
 use Brookin\MarketingAPI\Advertiser\AdvertiserGetRequest;
 use Brookin\MarketingAPI\Advertiser\AdvertiserGetResponse;
 use Brookin\MarketingAPI\Client;
@@ -22,7 +22,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $request->setAccountId(MARKETING_API_AGENCY_ID);
 
         $response = new AdvertiserGetResponse();
-        $client = new Advertiser();
+        $client = new AdvertiserService();
         $client->get($request, $response);
     }
 

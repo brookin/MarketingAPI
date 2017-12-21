@@ -8,7 +8,7 @@
 namespace Brookin\MarketingAPI\Report;
 
 
-class Report
+class ReportService
 {
 
     public function hourly(HourlyReportsGetRequest $request, HourlyReportsGetResponse $response) {

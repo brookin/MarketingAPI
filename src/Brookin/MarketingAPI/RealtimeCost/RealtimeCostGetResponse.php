@@ -1,29 +1,25 @@
 <?php
-/**
- * Created by PhpStorm.
- * Date: 12/7/17
- * Time: 7:40 PM
- */
 
-namespace Brookin\MarketingAPI\Campaign;
+
+namespace Brookin\MarketingAPI\RealtimeCost;
 
 
 use Brookin\MarketingAPI\Response;
 
-class CampaignGetResponse extends Response
+class RealtimeCostGetResponse extends Response
 {
     /**
-     * @var CampaignModel[]
+     * @var RealtimeCostModel[]
      */
-    protected $list;
+    public $list;
 
     /**
      * @var \Brookin\MarketingAPI\PageInfo
      */
-    protected $pageInfo;
+    public $pageInfo;
 
     /**
-     * @return CampaignModel[]
+     * @return RealtimeCostModel[]
      */
     public function getList()
     {
@@ -31,7 +27,7 @@ class CampaignGetResponse extends Response
     }
 
     /**
-     * @param CampaignModel[] $list
+     * @param RealtimeCostModel[] $list
      */
     public function setList($list)
     {
@@ -53,9 +49,6 @@ class CampaignGetResponse extends Response
     {
         $this->pageInfo = $pageInfo;
     }
-
-
-
 
 
 }

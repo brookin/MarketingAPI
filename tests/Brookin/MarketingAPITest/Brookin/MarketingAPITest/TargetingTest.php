@@ -7,7 +7,7 @@
 
 namespace Brookin\MarketingAPITest;
 
-use Brookin\MarketingAPI\Targeting\Targeting;
+use Brookin\MarketingAPI\Targeting\TargetingService;
 use Brookin\MarketingAPI\Targeting\TargetingAddRequest;
 use Brookin\MarketingAPI\Targeting\TargetingAddResponse;
 use Brookin\MarketingAPI\Targeting\TargetingGetRequest;
@@ -24,7 +24,7 @@ class TargetingTest extends \PHPUnit_Framework_TestCase
         $request->accountId = MARKETING_API_ADVERTISER_ID;
         $request->targetingName = 'targetingName'.date('Y-m-d H:i:s');
 
-        $service = new Targeting();
+        $service = new TargetingService();
         $service->add($request, $response);
         println($response);
 //        $response->targetingId = null;
@@ -39,7 +39,7 @@ class TargetingTest extends \PHPUnit_Framework_TestCase
         $request->targetingId = MARKETING_API_TARGETING_ID;
         $request->targetingName = 'targetingName-update'.date('Y-m-d H:i:s');
 
-        $service = new Targeting();
+        $service = new TargetingService();
         $service->update($request, $response);
     }
 
@@ -50,7 +50,7 @@ class TargetingTest extends \PHPUnit_Framework_TestCase
         $request->accountId = MARKETING_API_ADVERTISER_ID;
         $request->targetingId = MARKETING_API_TARGETING_ID;
 
-        $service = new Targeting();
+        $service = new TargetingService();
         $service->get($request, $response);
 
         print_r($response);

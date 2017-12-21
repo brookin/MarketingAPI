@@ -10,7 +10,7 @@ namespace Brookin\MarketingAPI\Advertiser;
 
 use Brookin\MarketingAPI\Client;
 
-class Advertiser extends Client
+class AdvertiserService extends Client
 {
 
     public function get(AdvertiserGetRequest $request, AdvertiserGetResponse $response) {

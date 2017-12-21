@@ -8,7 +8,7 @@
 namespace Brookin\MarketingAPI\Product;
 
 
-class Product
+class ProductService
 {
 
 }

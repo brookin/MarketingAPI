@@ -10,7 +10,7 @@ namespace Brookin\MarketingAPI\Adgroup;
 
 use Brookin\MarketingAPI\RestClient;
 
-class Adgroup extends RestClient
+class AdgroupService extends RestClient
 {
     public function add(AdgroupAddRequest $request, AdgroupAddResponse $response) {
         $this->send(self::POST, $this->getPath(__METHOD__), $request, $response);

@@ -7,7 +7,7 @@
 
 namespace Brookin\MarketingAPITest;
 
-use Brookin\MarketingAPI\Image\Image;
+use Brookin\MarketingAPI\Image\ImageService;
 use Brookin\MarketingAPI\Image\ImageAddRequest;
 use Brookin\MarketingAPI\Image\ImageAddResponse;
 
@@ -20,7 +20,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
         $response = new ImageAddResponse();
 //        $file = './tests/rule.jpg';
         $file = './tests/160x210.png';
-        $client = new Image();
+        $client = new ImageService();
         $request->accountId = [
             'name' => 'account_id',
             'contents' => MARKETING_API_ADVERTISER_ID
