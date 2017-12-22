@@ -12,27 +12,14 @@ use Rafrsr\LibArray2Object\Object2ArrayBuilder;
 
 class Request
 {
-    /**
-     * @var string
-     */
-    protected $guzzleRequestEnctype;
 
     /**
      * @return string
      */
     public function getGuzzleRequestEnctype()
     {
-        return $this->guzzleRequestEnctype;
+        return '';
     }
-
-    /**
-     * @param string $guzzleRequestEnctype
-     */
-    public function setGuzzleRequestEnctype($guzzleRequestEnctype)
-    {
-        $this->guzzleRequestEnctype = $guzzleRequestEnctype;
-    }
-
 
     public function toQueryString()
     {

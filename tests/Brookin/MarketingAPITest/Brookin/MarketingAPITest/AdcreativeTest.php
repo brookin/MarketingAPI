@@ -17,7 +17,7 @@ use Brookin\MarketingAPI\Adcreative\AdcreativeUpdateResponse;
 
 class AdcreativeTest extends \PHPUnit_Framework_TestCase
 {
-    public function _testAdd() {
+    public function testAdd() {
         $request = new AdcreativeAddRequest();
         $response = new AdcreativeAddResponse();
         $request->accountId = MARKETING_API_ADVERTISER_ID;
@@ -35,9 +35,10 @@ class AdcreativeTest extends \PHPUnit_Framework_TestCase
 
         $service = new AdcreativeService();
         $service->add($request, $response);
+        println($response);
     }
 
-    public function _testUpdate() {
+    public function testUpdate() {
         $request = new AdcreativeUpdateRequest();
         $response = new AdcreativeUpdateResponse();
         $request->accountId = MARKETING_API_ADVERTISER_ID;
@@ -64,6 +65,7 @@ class AdcreativeTest extends \PHPUnit_Framework_TestCase
 
         $service = new AdcreativeService();
         $service->get($request, $response);
+        println($response);
     }
 
 }

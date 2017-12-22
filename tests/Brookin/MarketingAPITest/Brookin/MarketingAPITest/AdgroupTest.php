@@ -18,7 +18,7 @@ use Brookin\MarketingAPI\Adgroup\AdgroupUpdateResponse;
 class AdgroupTest extends \PHPUnit_Framework_TestCase
 {
 
-    public function _testAdd() {
+    public function testAdd() {
         $request = new AdgroupAddRequest();
         $response = new AdgroupAddResponse();
         $request->accountId = MARKETING_API_ADVERTISER_ID;
@@ -36,9 +36,10 @@ class AdgroupTest extends \PHPUnit_Framework_TestCase
 
         $service = new AdgroupService();
         $service->add($request, $response);
+        println($response);
     }
 
-    public function _testUpdate() {
+    public function testUpdate() {
         $request = new AdgroupUpdateRequest();
         $response = new AdgroupUpdateResponse();
         $request->accountId = MARKETING_API_ADVERTISER_ID;

@@ -10,6 +10,7 @@ namespace Brookin\MarketingAPITest;
 use Brookin\MarketingAPI\Image\ImageService;
 use Brookin\MarketingAPI\Image\ImageAddRequest;
 use Brookin\MarketingAPI\Image\ImageAddResponse;
+use Brookin\MarketingAPI\UploadFileStruct;
 
 class ImageTest extends \PHPUnit_Framework_TestCase
 {
@@ -18,24 +19,24 @@ class ImageTest extends \PHPUnit_Framework_TestCase
     {
         $request = new ImageAddRequest();
         $response = new ImageAddResponse();
-//        $file = './tests/rule.jpg';
-        $file = './tests/160x210.png';
         $client = new ImageService();
-        $request->accountId = [
-            'name' => 'account_id',
-            'contents' => MARKETING_API_ADVERTISER_ID
-        ];
-        $request->signature = [
-            'name' => 'signature',
-            'contents' => md5_file($file),
-        ];
-        $request->file = [
-            'name' => 'file',
-            'contents' => fopen($file, 'r'),
-        ];
+
+        $file = './tests/1602101.png';
+
+        $uploadFile = new UploadFileStruct();
+        $uploadFile->setFilePath($file);
+
+        $request->accountId = MARKETING_API_ADVERTISER_ID;
+        $request->signature = md5_file($file);
+
+        $request->file = $uploadFile;
 
         $client->add($request, $response);
         println($response);
     }
 
+    public function testGet()
+    {
+
+    }
 }

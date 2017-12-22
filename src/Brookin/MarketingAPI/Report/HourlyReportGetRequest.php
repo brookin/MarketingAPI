@@ -2,15 +2,15 @@
 /**
  * Created by PhpStorm.
  * Date: 12/8/17
- * Time: 2:58 PM
+ * Time: 2:17 PM
  */
 
-namespace Brookin\MarketingAPI\Product;
+namespace Brookin\MarketingAPI\Report;
 
 
 use Brookin\MarketingAPI\Request;
 
-class ProductGetRequest extends Request
+class HourlyReportGetRequest extends Request
 {
     /**
      * @var int
@@ -20,12 +20,12 @@ class ProductGetRequest extends Request
     /**
      * @var string
      */
-    public $productType;
+    public $level;
 
     /**
      * @var string
      */
-    public $productRefsId;
+    protected $date;
 
     /**
      * @return int
@@ -46,33 +46,33 @@ class ProductGetRequest extends Request
     /**
      * @return string
      */
-    public function getProductType()
+    public function getLevel()
     {
-        return $this->productType;
+        return $this->level;
     }
 
     /**
-     * @param string $productType
+     * @param string $level
      */
-    public function setProductType($productType)
+    public function setLevel($level)
     {
-        $this->productType = $productType;
+        $this->level = $level;
     }
 
     /**
      * @return string
      */
-    public function getProductRefsId()
+    public function getDate()
     {
-        return $this->productRefsId;
+        return $this->date;
     }
 
     /**
-     * @param string $productRefsId
+     * @param string $date
      */
-    public function setProductRefsId($productRefsId)
+    public function setDate($date)
     {
-        $this->productRefsId = $productRefsId;
+        $this->date = $date;
     }
 
 

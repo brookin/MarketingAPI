@@ -31,4 +31,70 @@ class ProductAddRequest extends Request
      * @var string
      */
     public $productRefsId;
+
+    /**
+     * @return int
+     */
+    public function getAccountId()
+    {
+        return $this->accountId;
+    }
+
+    /**
+     * @param int $accountId
+     */
+    public function setAccountId($accountId)
+    {
+        $this->accountId = $accountId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProductName()
+    {
+        return $this->productName;
+    }
+
+    /**
+     * @param string $productName
+     */
+    public function setProductName($productName)
+    {
+        $this->productName = $productName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProductType()
+    {
+        return $this->productType;
+    }
+
+    /**
+     * @param string $productType
+     */
+    public function setProductType($productType)
+    {
+        $this->productType = $productType;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProductRefsId()
+    {
+        return $this->productRefsId;
+    }
+
+    /**
+     * @param string $productRefsId
+     */
+    public function setProductRefsId($productRefsId)
+    {
+        $this->productRefsId = $productRefsId;
+    }
+
+
 }

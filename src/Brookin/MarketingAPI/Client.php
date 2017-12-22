@@ -115,7 +115,6 @@ class Client
         }
 
         $data = json_decode(json_encode($result['data']));
-//        println($data);
         $mapper = new \JsonMapper();
         $mapper->map($data, $response);
 

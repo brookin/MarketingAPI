@@ -7,5 +7,3 @@
 
 require 'vendor/autoload.php';
 require 'token.php';
-require '../Arrayzy-master/vendor/autoload.php';
-require '../arrayobject/vendor/autoload.php';
