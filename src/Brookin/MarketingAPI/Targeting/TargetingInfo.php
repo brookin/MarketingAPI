@@ -13,15 +13,15 @@ class TargetingInfo
     /**
      * @var string[]
      */
-    public $age;
+    public $age = [];
 
     /**
      * @var string[]
      */
-    public $gender;
+    public $gender = [];
 
     /**
      * @var string[]
      */
-    public $education;
+    public $education = [];
 }
