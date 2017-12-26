@@ -26,4 +26,9 @@ class TargetingService extends RestClient
     public function getTags(TargetingTagsGetRequest $request, TargetingTagsGetResponse $response) {
         $this->send(self::GET, $this->getPath(__METHOD__), $request, $response);
     }
+
+    public function delete(TargetingDeleteRequest $request, TargetingDeleteResponse $response)
+    {
+        $this->doPost($request, $response);
+    }
 }

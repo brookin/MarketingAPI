@@ -25,19 +25,19 @@ class TargetingGetRequest extends Request
     public $targetingId;
 
     /**
-     * @var Filtering
+     * @var \Brookin\MarketingAPI\Filtering
      */
-    public $filtering;
+    protected $filtering;
 
     /**
      * @var int
      */
-    public $page;
+    protected $page;
 
     /**
      * @var int
      */
-    public $pageSize;
+    protected $pageSize;
 
     /**
      * @return int

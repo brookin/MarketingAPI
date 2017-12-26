@@ -16,7 +16,7 @@ use Brookin\MarketingAPI\Advertiser\AdvertiserGetResponse;
 class AdvertiserTest extends \PHPUnit_Framework_TestCase
 {
 
-    public function _testAdd() {
+    public function testAdd() {
         $request = new AdvertiserAddRequest();
         $response = new AdvertiserAddResponse();
         $client = new AdvertiserService();
@@ -26,7 +26,7 @@ class AdvertiserTest extends \PHPUnit_Framework_TestCase
         $request->industryQualificationImageIdList = [MARKETING_API_IMAGE_ID];
         $request->systemIndustryId = 21474836581;
         $client->add($request, $response);
-        println($response);
+        $this->assertGreaterThan(0, $response->getAccountId(), 'add advertiser error');
     }
 
     public function testGet() {
@@ -35,6 +35,6 @@ class AdvertiserTest extends \PHPUnit_Framework_TestCase
         $response = new AdvertiserGetResponse();
         $client = new AdvertiserService();
         $client->get($request, $response);
-        println($response);
+        $this->assertNotNull($response->getList(), 'get advertiser error');
     }
 }

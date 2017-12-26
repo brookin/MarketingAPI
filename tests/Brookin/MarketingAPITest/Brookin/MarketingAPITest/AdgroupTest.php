@@ -36,28 +36,19 @@ class AdgroupTest extends \PHPUnit_Framework_TestCase
 
         $service = new AdgroupService();
         $service->add($request, $response);
-        println($response);
+        $this->assertGreaterThan(0, $response->getAdgroupId(), 'add adgroup error');
     }
 
     public function testUpdate() {
         $request = new AdgroupUpdateRequest();
         $response = new AdgroupUpdateResponse();
         $request->accountId = MARKETING_API_ADVERTISER_ID;
-//        $request->campaignId = MARKETING_API_CAMPAIGN_ID;
-//        $request->targetingId = MARKETING_API_TARGETING_ID;
         $request->adgroupId = MARKETING_API_ADGROUP_ID;
         $request->adgroupName = 'adgroupName update-'.date('Y-m-d H:i:s');
-//        $request->beginDate = date('Y-m-d');
-//        $request->endDate = date('Y-m-d');
-//        $request->siteSet = ['SITE_SET_QZONE'];
-//        $request->timeSeries = str_repeat('1', 336);
-//        $request->productType = 'PRODUCT_TYPE_LINK';
-//        $request->optimizationGoal = 'OPTIMIZATIONGOAL_CLICK';
-//        $request->billingEvent = 'BILLINGEVENT_CLICK';
-//        $request->bidAmount = 600;
 
         $service = new AdgroupService();
         $service->update($request, $response);
+        $this->assertGreaterThan(0, $response->getAdgroupId(), 'update adgroup error');
     }
 
 
@@ -69,6 +60,7 @@ class AdgroupTest extends \PHPUnit_Framework_TestCase
 
         $service = new AdgroupService();
         $service->get($request, $response);
+        $this->assertNotNull($response->getList(), 'get adgroup error');
     }
 
 

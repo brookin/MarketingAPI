@@ -12,5 +12,26 @@ use Brookin\MarketingAPI\Response;
 
 class AdUpdateResponse extends Response
 {
+    /**
+     * @var int
+     */
     public $adId;
+
+    /**
+     * @return int
+     */
+    public function getAdId()
+    {
+        return $this->adId;
+    }
+
+    /**
+     * @param int $adId
+     */
+    public function setAdId($adId)
+    {
+        $this->adId = $adId;
+    }
+
+
 }

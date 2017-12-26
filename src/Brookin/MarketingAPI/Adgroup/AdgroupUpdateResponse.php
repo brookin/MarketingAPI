@@ -13,6 +13,26 @@ use Brookin\MarketingAPI\Response;
 class AdgroupUpdateResponse extends Response
 {
 
+    /**
+     * @var int
+     */
     public $adgroupId;
+
+    /**
+     * @return int
+     */
+    public function getAdgroupId()
+    {
+        return $this->adgroupId;
+    }
+
+    /**
+     * @param int $adgroupId
+     */
+    public function setAdgroupId($adgroupId)
+    {
+        $this->adgroupId = $adgroupId;
+    }
+
 
 }

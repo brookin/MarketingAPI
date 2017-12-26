@@ -29,7 +29,7 @@ class FundTest extends \PHPUnit_Framework_TestCase
         $request->setAccountId(MARKETING_API_ADVERTISER_ID);
 
         $service->get($request, $response);
-        println($response);
+        $this->assertNotNull($response->getList(), 'get fund error');
     }
 
     public function testStatementsDaily()
@@ -44,7 +44,7 @@ class FundTest extends \PHPUnit_Framework_TestCase
         $request->setTradeType('CHARGE');
 
         $service->get($request, $response);
-        println($response);
+        $this->assertNotNull($response->getList(), 'get statements daily error');
     }
 
     public function testStatementsDetail()
@@ -62,7 +62,7 @@ class FundTest extends \PHPUnit_Framework_TestCase
         $request->setFundType('GENERAL_CASH');
 
         $service->get($request, $response);
-        println($response);
+        $this->assertNotNull($response->getList(), 'get statements detail error');
     }
 
     public function testFundTransfer()
@@ -79,6 +79,6 @@ class FundTest extends \PHPUnit_Framework_TestCase
         $request->setMemo('账户转账');
 
         $service->add($request, $response);
-        println($response);
+        $this->assertGreaterThan(0, $response->getAmount(), 'fund transfer error');
     }
 }

@@ -7,7 +7,9 @@
 
 namespace Brookin\MarketingAPI;
 
+use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\RequestOptions;
+use Psr\Http\Message\ResponseInterface;
 
 class Client
 {
@@ -69,9 +71,9 @@ class Client
         return $this->path;
     }
 
-    public function doPost(Request $request, Response $response, $upload = false)
+    public function doPost(Request $request, Response $response)
     {
-        $this->send(self::POST, $this->getRequestPath($request), $request, $response , $upload);
+        $this->send(self::POST, $this->getRequestPath($request), $request, $response);
     }
 
     public function doGet(Request $request, Response $response)
@@ -84,10 +86,9 @@ class Client
 
     }
 
-    public function send($method, $path, Request $request, Response $response, $upload = false) {
-
+    public function send($method, $path, Request $request, Response $response)
+    {
         $url = $this->urlPrefix.$path;
-
         $options = [];
         if ($method == 'GET') {
             $options = array_merge_recursive($this->defaultOptions, [
@@ -102,21 +103,36 @@ class Client
                 ]);
             }
         }
-//        println($options);
+
         $res = $this->client->request($method, $url, $options);
+        $this->afterSend($res, $response);
+    }
+
+    /**
+     * @param ResponseInterface $res
+     * @param Response $response
+     * @throws \Exception
+     */
+    public function afterSend(ResponseInterface $res, Response $response)
+    {
         $result = json_decode($res->getBody()->getContents(), true);
         if (!isset($result['code'])) {
             throw new \Exception('result structure error', 100);
         }
 
         if ($result['code'] != 0) {
-            println($result);
-            throw new \Exception('request failed, code: '.$result['code'], 101);
+            $message = $result['code'];
+            if (isset($result['message'])) {
+                $message = $result['message'];
+            }
+            throw new \Exception('request failed, code: '.$message, 101);
         }
 
         $data = json_decode(json_encode($result['data']));
         $mapper = new \JsonMapper();
-        $mapper->map($data, $response);
+        if (is_object($data)) {
+            $mapper->map($data, $response);
+        }
 
     }
 }

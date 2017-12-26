@@ -36,6 +36,11 @@ class CampaignUpdateRequest extends Request
     /**
      * @var string
      */
+    protected $speedMode;
+
+    /**
+     * @var string
+     */
     public $configuredStatus;
 
     /**
@@ -101,6 +106,23 @@ class CampaignUpdateRequest extends Request
     {
         $this->dailyBudget = $dailyBudget;
     }
+
+    /**
+     * @return string
+     */
+    public function getSpeedMode()
+    {
+        return $this->speedMode;
+    }
+
+    /**
+     * @param string $speedMode
+     */
+    public function setSpeedMode($speedMode)
+    {
+        $this->speedMode = $speedMode;
+    }
+
 
     /**
      * @return string

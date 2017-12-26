@@ -28,7 +28,7 @@ class UserActionSetTest extends \PHPUnit_Framework_TestCase
         $request->setDescription('test');
 
         $service->add($request, $response);
-        println($response);
+        $this->assertGreaterThan(0, $response->getUserActionSetId(), 'add action set error');
     }
 
     public function testGet()
@@ -41,7 +41,7 @@ class UserActionSetTest extends \PHPUnit_Framework_TestCase
         $request->setUserActionSetId(MARKETING_API_USER_ACTION_SET_ID);
 
         $service->get($request, $response);
-        println($response);
+        $this->assertNotNull($response->getList(), 'get action set error');
     }
 
     public function testReport()
@@ -57,6 +57,6 @@ class UserActionSetTest extends \PHPUnit_Framework_TestCase
         $range->setEndDate(date('Y-m-d', time()));
         $request->setDateRange($range);
         $service->queryReport($request, $response);
-        println($response);
+        $this->assertNotNull($response->getList(), 'get action set report error');
     }
 }

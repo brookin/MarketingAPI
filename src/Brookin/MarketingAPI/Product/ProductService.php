@@ -8,7 +8,22 @@
 namespace Brookin\MarketingAPI\Product;
 
 
-class ProductService
-{
+use Brookin\MarketingAPI\RestClient;
 
+class ProductService extends RestClient
+{
+    public function add(ProductAddRequest $request, ProductAddResponse $response)
+    {
+        $this->doPost($request, $response);
+    }
+
+    public function update(ProductUpdateRequest $request, ProductUpdateResponse $response)
+    {
+        $this->doPost($request, $response);
+    }
+
+    public function get(ProductGetRequest $request, ProductGetResponse $response)
+    {
+        $this->doGet($request, $response);
+    }
 }

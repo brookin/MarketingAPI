@@ -12,15 +12,26 @@ use Brookin\MarketingAPI\Response;
 
 class TargetingTagsGetResponse extends Response
 {
+    /**
+     * @var TargetingTagsModel[]
+     */
+    protected $list;
 
     /**
-     * @var int
+     * @return TargetingTagsModel[]
      */
-    public $accountId;
+    public function getList()
+    {
+        return $this->list;
+    }
 
     /**
-     * @var int
+     * @param TargetingTagsModel[] $list
      */
-    public $targetingId;
+    public function setList($list)
+    {
+        $this->list = $list;
+    }
+
 
 }

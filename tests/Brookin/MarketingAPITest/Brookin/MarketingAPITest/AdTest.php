@@ -30,6 +30,7 @@ class AdTest extends \PHPUnit_Framework_TestCase
 
         $service = new AdService();
         $service->add($request, $response);
+        $this->assertGreaterThan(0, $response->getAdId(), 'add ad error');
     }
 
     public function _testUpdate() {
@@ -37,25 +38,22 @@ class AdTest extends \PHPUnit_Framework_TestCase
         $response = new AdUpdateResponse();
 
         $request->accountId = MARKETING_API_ADVERTISER_ID;
-        $request->adgroupId = MARKETING_API_ADGROUP_ID;
-        $request->adcreativeId = MARKETING_API_ADCREATIVE_ID;
+        $request->setAdId(MARKETING_API_AD_ID);
         $request->adName = 'adname'.date('Y-m-d H:i:s');
-
         $service = new AdService();
         $service->update($request, $response);
+        $this->assertGreaterThan(0, $response->getAdId(), 'update ad error');
     }
 
-    public function _testGet() {
+    public function testGet() {
         $request = new AdGetRequest();
         $response = new AdGetResponse();
 
         $request->accountId = MARKETING_API_ADVERTISER_ID;
-        $request->adgroupId = MARKETING_API_ADGROUP_ID;
-        $request->adcreativeId = MARKETING_API_ADCREATIVE_ID;
-        $request->adName = 'adname'.date('Y-m-d H:i:s');
 
         $service = new AdService();
         $service->get($request, $response);
+        $this->assertNotNull($response->getList(), 'get ad error');
     }
 
 }

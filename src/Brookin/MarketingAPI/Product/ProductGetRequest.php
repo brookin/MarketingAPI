@@ -20,6 +20,11 @@ class ProductGetRequest extends Request
     /**
      * @var string
      */
+    protected $productName;
+
+    /**
+     * @var string
+     */
     public $productType;
 
     /**
@@ -73,6 +78,22 @@ class ProductGetRequest extends Request
     public function setProductRefsId($productRefsId)
     {
         $this->productRefsId = $productRefsId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProductName()
+    {
+        return $this->productName;
+    }
+
+    /**
+     * @param string $productName
+     */
+    public function setProductName($productName)
+    {
+        $this->productName = $productName;
     }
 
 

@@ -25,6 +25,6 @@ class RealtimeCostTest extends \PHPUnit_Framework_TestCase
 //        $filter->setField()
 
         $service->get($request, $response);
-        println($response);
+        $this->assertNotNull($response->getList(), 'get real time cost error');
     }
 }

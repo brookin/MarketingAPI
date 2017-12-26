@@ -35,26 +35,19 @@ class AdcreativeTest extends \PHPUnit_Framework_TestCase
 
         $service = new AdcreativeService();
         $service->add($request, $response);
-        println($response);
+        $this->assertAttributeGreaterThan(0, 'adcreativeId', $response, 'create adcreative error');
     }
 
     public function testUpdate() {
         $request = new AdcreativeUpdateRequest();
         $response = new AdcreativeUpdateResponse();
-        $request->accountId = MARKETING_API_ADVERTISER_ID;
-        $request->adcreativeName = 'adcrt-update'.date('Y-m-d H:i:s');
-//        $request->adcreativeTemplateId = 2;
-//        $elements = [
-//            'image' => MARKETING_API_IMAGE_ID_160x210,
-//            'title' => 'title123',
-//        ];
-//        $request->adcreativeElements = json_encode($elements);
-        $request->destinationUrl = 'http://www.baidu.com';
-//        $request->siteSet = ['SITE_SET_QZONE'];
-//        $request->productType = 'PRODUCT_TYPE_LINK';
+        $request->setAccountId(MARKETING_API_ADVERTISER_ID);
+        $request->setAdcreativeName('adcrt-update'.date('Y-m-d H:i:s'));
+        $request->setDestinationUrl('http://www.baidu.com');
 
         $service = new AdcreativeService();
         $service->update($request, $response);
+        $this->assertAttributeGreaterThan(0, 'adcreativeId', $response, 'update adcreative error');
     }
 
     public function testGet() {
@@ -65,7 +58,7 @@ class AdcreativeTest extends \PHPUnit_Framework_TestCase
 
         $service = new AdcreativeService();
         $service->get($request, $response);
-        println($response);
+        $this->assertNotNull($response->getList(), 'get adcreative error');
     }
 
 }

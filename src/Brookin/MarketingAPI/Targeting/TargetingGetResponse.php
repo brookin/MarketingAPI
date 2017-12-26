@@ -14,19 +14,46 @@ class TargetingGetResponse extends Response
 {
 
     /**
-     * @var int
+     * @var TargetingModel[]
      */
-    public $accountId;
+    protected $list;
 
     /**
-     * @var int
+     * @var \Brookin\MarketingAPI\PageInfo
      */
-    public $targetingId;
+    protected $pageInfo;
 
     /**
-     * @var string
+     * @return TargetingModel[]
      */
-    public $targetingName;
+    public function getList()
+    {
+        return $this->list;
+    }
+
+    /**
+     * @param TargetingModel[] $list
+     */
+    public function setList($list)
+    {
+        $this->list = $list;
+    }
+
+    /**
+     * @return \Brookin\MarketingAPI\PageInfo
+     */
+    public function getPageInfo()
+    {
+        return $this->pageInfo;
+    }
+
+    /**
+     * @param \Brookin\MarketingAPI\PageInfo $pageInfo
+     */
+    public function setPageInfo($pageInfo)
+    {
+        $this->pageInfo = $pageInfo;
+    }
 
 
 

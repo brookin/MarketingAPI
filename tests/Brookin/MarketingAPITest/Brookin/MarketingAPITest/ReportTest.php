@@ -29,7 +29,7 @@ class ReportTest extends \PHPUnit_Framework_TestCase
         $request->setDateRange($range);
 
         $service->getDaily($request, $response);
-        println($response);
+        $this->assertNotNull($response->getList(), 'get daily report error');
     }
 
     public function testHourly()
@@ -38,12 +38,11 @@ class ReportTest extends \PHPUnit_Framework_TestCase
         $response = new HourlyReportGetResponse();
         $service = new HourlyReportService();
 
-
         $request->setAccountId(MARKETING_API_ADVERTISER_ID);
         $request->setLevel('ADVERTISER');
         $request->setDate(date('Y-m-d', time()));
 
         $service->getHourly($request, $response);
-        println($response);
+        $this->assertNotNull($response->getList(), 'get hourly report error');
     }
 }

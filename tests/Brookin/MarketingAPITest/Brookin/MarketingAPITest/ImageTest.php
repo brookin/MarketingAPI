@@ -7,6 +7,8 @@
 
 namespace Brookin\MarketingAPITest;
 
+use Brookin\MarketingAPI\Image\ImageGetRequest;
+use Brookin\MarketingAPI\Image\ImageGetResponse;
 use Brookin\MarketingAPI\Image\ImageService;
 use Brookin\MarketingAPI\Image\ImageAddRequest;
 use Brookin\MarketingAPI\Image\ImageAddResponse;
@@ -32,11 +34,19 @@ class ImageTest extends \PHPUnit_Framework_TestCase
         $request->file = $uploadFile;
 
         $client->add($request, $response);
-        println($response);
+        $this->assertGreaterThan(0, $response->getHeight(), 'add image error');
     }
 
     public function testGet()
     {
+        $request = new ImageGetRequest();
+        $response = new ImageGetResponse();
+        $client = new ImageService();
 
+        $request->setAccountId(MARKETING_API_ADVERTISER_ID);
+
+
+        $client->get($request, $response);
+        $this->assertNotNull($response->getList(), 'get image error');
     }
 }

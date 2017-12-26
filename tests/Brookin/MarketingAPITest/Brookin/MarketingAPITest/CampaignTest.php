@@ -33,7 +33,7 @@ class CampaignTest extends \PHPUnit_Framework_TestCase
         $service = new CampaignService();
         $service->add($request, $response);
 
-        println($response);
+        $this->assertGreaterThan(0, $response->getCampaignId(), 'add campaign error');
     }
 
     public function testUpdate() {
@@ -47,6 +47,7 @@ class CampaignTest extends \PHPUnit_Framework_TestCase
 
         $service = new CampaignService();
         $service->update($request, $response);
+        $this->assertGreaterThan(0, $response->getCampaignId(), 'update campaign error');
     }
 
     public function testGet() {
@@ -54,12 +55,12 @@ class CampaignTest extends \PHPUnit_Framework_TestCase
         $response = new CampaignGetResponse();
 
         $request->accountId = MARKETING_API_ADVERTISER_ID;
-        $request->campaignId = MARKETING_API_CAMPAIGN_ID;
+        $request->setCampaignId(MARKETING_API_CAMPAIGN_ID);
 
 
         $service = new CampaignService();
         $service->get($request, $response);
-        println($response);
+        $this->assertNotNull($response->getList(), 'get campaign error');
     }
 
 }

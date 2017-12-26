@@ -13,7 +13,26 @@ use Brookin\MarketingAPI\Response;
 
 class AdcreativeUpdateResponse extends Response
 {
-
+    /**
+     * @var int
+     */
     public $adcreativeId;
+
+    /**
+     * @return int
+     */
+    public function getAdcreativeId()
+    {
+        return $this->adcreativeId;
+    }
+
+    /**
+     * @param int $adcreativeId
+     */
+    public function setAdcreativeId($adcreativeId)
+    {
+        $this->adcreativeId = $adcreativeId;
+    }
+
 
 }

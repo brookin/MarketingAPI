@@ -26,7 +26,7 @@ class VideoTest extends \PHPUnit_Framework_TestCase
         $request->setVideoFile($struct);
         $service = new VideoService();
         $service->add($request, $response);
-        println($response);
+        $this->assertNotNull($response->getVideoId(), 'add video error');
     }
 
     public function testGet()
@@ -38,6 +38,6 @@ class VideoTest extends \PHPUnit_Framework_TestCase
         $request->setVideoId(MARKETING_API_VIDEO_ID);
         $service = new VideoService();
         $service->get($request, $response);
-        println($response);
+        $this->assertNotNull($response->getVideoId(), 'get video error');
     }
 }
