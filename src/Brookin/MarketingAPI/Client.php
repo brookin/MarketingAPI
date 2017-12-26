@@ -7,14 +7,13 @@
 
 namespace Brookin\MarketingAPI;
 
-use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\ResponseInterface;
 
 class Client
 {
 
-    public $urlPrefix = MARKETING_API_API_URL_PREFIX;
+    public $urlPrefix = MARKETING_API_URL_PREFIX;
 
     const POST = 'POST';
 
@@ -130,6 +129,7 @@ class Client
 
         $data = json_decode(json_encode($result['data']));
         $mapper = new \JsonMapper();
+        $mapper->bEnforceMapType = false;
         if (is_object($data)) {
             $mapper->map($data, $response);
         }
