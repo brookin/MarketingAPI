@@ -14,7 +14,7 @@ use Psr\Http\Message\ResponseInterface;
 class Client
 {
 
-    public $urlPrefix = 'https://sandbox-api.e.qq.com/v1.0';
+    public $urlPrefix = MARKETING_API_API_URL_PREFIX;
 
     const POST = 'POST';
 

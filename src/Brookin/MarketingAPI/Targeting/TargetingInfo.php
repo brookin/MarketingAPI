@@ -13,16 +13,17 @@ class TargetingInfo
     /**
      * @var string[]
      */
-    public $age;
+    public $age = [];
 
     /**
      * @var string[]
      */
-    public $gender;
+    public $gender = [];
 
     /**
      * @var string[]
      */
+<<<<<<< HEAD
     public $education;
 
     /**
@@ -557,4 +558,7 @@ class TargetingInfo
     }
 
 
+=======
+    public $education = [];
+>>>>>>> ee0a365a9be482829ccbafe9b68fd61f4d36faff
 }
