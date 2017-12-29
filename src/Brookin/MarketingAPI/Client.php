@@ -64,7 +64,7 @@ class Client
         if (defined('MARKETING_API_ACCESS_TOKEN') && !empty(MARKETING_API_ACCESS_TOKEN)) {
             return MARKETING_API_ACCESS_TOKEN;
         } else {
-            $data = \Yii::$app->get(self::getTokenKey($appId));
+            $data = \Yii::$app->getCache()->get(self::getTokenKey($appId));
             return $data['access_token'];
         }
     }
