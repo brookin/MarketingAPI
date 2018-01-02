@@ -25,8 +25,10 @@ class ReportTest extends \PHPUnit_Framework_TestCase
         $range->setEndDate(date('Y-m-d', time()));
 
         $request->setAccountId(MARKETING_API_ADVERTISER_ID);
-        $request->setLevel('ADVERTISER');
+        $request->setLevel('CAMPAIGN');
         $request->setDateRange($range);
+
+        $request->setGroupBy(['campaign_id']);
 
         $service->getDaily($request, $response);
         $this->assertNotNull($response->getList(), 'get daily report error');
