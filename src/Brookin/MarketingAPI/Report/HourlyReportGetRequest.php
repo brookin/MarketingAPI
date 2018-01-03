@@ -8,9 +8,9 @@
 namespace Brookin\MarketingAPI\Report;
 
 
-use Brookin\MarketingAPI\Request;
+use Brookin\MarketingAPI\GetRequest;
 
-class HourlyReportGetRequest extends Request
+class HourlyReportGetRequest extends GetRequest
 {
     /**
      * @var int

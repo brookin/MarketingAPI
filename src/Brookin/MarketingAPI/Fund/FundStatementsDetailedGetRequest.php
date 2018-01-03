@@ -4,10 +4,9 @@
 namespace Brookin\MarketingAPI\Fund;
 
 
-use Brookin\MarketingAPI\DateRange;
-use Brookin\MarketingAPI\Request;
+use Brookin\MarketingAPI\GetRequest;
 
-class FundStatementsDetailedGetRequest extends Request
+class FundStatementsDetailedGetRequest extends GetRequest
 {
     /**
      * @var int
@@ -19,20 +18,6 @@ class FundStatementsDetailedGetRequest extends Request
      */
     public $fundType;
 
-    /**
-     * @var DateRange
-     */
-    public $dateRange;
-
-    /**
-     * @var int
-     */
-    public $page;
-
-    /**
-     * @var int
-     */
-    public $pageSize;
 
     /**
      * @return int
@@ -66,53 +51,6 @@ class FundStatementsDetailedGetRequest extends Request
         $this->fundType = $fundType;
     }
 
-    /**
-     * @return DateRange
-     */
-    public function getDateRange()
-    {
-        return $this->dateRange;
-    }
-
-    /**
-     * @param DateRange $dateRange
-     */
-    public function setDateRange($dateRange)
-    {
-        $this->dateRange = $dateRange;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPage()
-    {
-        return $this->page;
-    }
-
-    /**
-     * @param int $page
-     */
-    public function setPage($page)
-    {
-        $this->page = $page;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPageSize()
-    {
-        return $this->pageSize;
-    }
-
-    /**
-     * @param int $pageSize
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->pageSize = $pageSize;
-    }
 
 
 }

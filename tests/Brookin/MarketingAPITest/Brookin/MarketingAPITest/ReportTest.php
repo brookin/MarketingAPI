@@ -27,6 +27,7 @@ class ReportTest extends \PHPUnit_Framework_TestCase
         $request->setAccountId(MARKETING_API_ADVERTISER_ID);
         $request->setLevel('CAMPAIGN');
         $request->setDateRange($range);
+        $request->setPageSize(100);
 
         $request->setGroupBy(['campaign_id']);
 

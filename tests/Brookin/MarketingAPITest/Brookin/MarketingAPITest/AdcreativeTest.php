@@ -42,6 +42,7 @@ class AdcreativeTest extends \PHPUnit_Framework_TestCase
         $request = new AdcreativeUpdateRequest();
         $response = new AdcreativeUpdateResponse();
         $request->setAccountId(MARKETING_API_ADVERTISER_ID);
+        $request->setAdcreativeId(MARKETING_API_ADCREATIVE_ID);
         $request->setAdcreativeName('adcrt-update'.date('Y-m-d H:i:s'));
         $request->setDestinationUrl('http://www.baidu.com');
 

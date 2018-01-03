@@ -4,9 +4,9 @@
 namespace Brookin\MarketingAPI\CustomAudience;
 
 
-use Brookin\MarketingAPI\Request;
+use Brookin\MarketingAPI\GetRequest;
 
-class CustomAudienceGetRequest extends Request
+class CustomAudienceGetRequest extends GetRequest
 {
     /**
      * @var int
@@ -18,15 +18,6 @@ class CustomAudienceGetRequest extends Request
      */
     protected $audienceId;
 
-    /**
-     * @var int
-     */
-    protected $page;
-
-    /**
-     * @var int
-     */
-    protected $pageSize;
 
     /**
      * @return int
@@ -58,38 +49,6 @@ class CustomAudienceGetRequest extends Request
     public function setAudienceId($audienceId)
     {
         $this->audienceId = $audienceId;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPage()
-    {
-        return $this->page;
-    }
-
-    /**
-     * @param int $page
-     */
-    public function setPage($page)
-    {
-        $this->page = $page;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPageSize()
-    {
-        return $this->pageSize;
-    }
-
-    /**
-     * @param int $pageSize
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->pageSize = $pageSize;
     }
 
 

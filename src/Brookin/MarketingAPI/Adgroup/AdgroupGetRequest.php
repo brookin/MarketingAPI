@@ -8,9 +8,9 @@
 namespace Brookin\MarketingAPI\Adgroup;
 
 
-use Brookin\MarketingAPI\Request;
+use Brookin\MarketingAPI\GetRequest;
 
-class AdgroupGetRequest extends Request
+class AdgroupGetRequest extends GetRequest
 {
     /**
      * @var int
@@ -22,20 +22,6 @@ class AdgroupGetRequest extends Request
      */
     public $adgroupId;
 
-    /**
-     * @var \Brookin\MarketingAPI\Filtering
-     */
-    public $filtering;
-
-    /**
-     * @var int
-     */
-    protected $page;
-
-    /**
-     * @var int
-     */
-    protected $pageSize;
 
     /**
      * @return int
@@ -67,54 +53,6 @@ class AdgroupGetRequest extends Request
     public function setAdgroupId($adgroupId)
     {
         $this->adgroupId = $adgroupId;
-    }
-
-    /**
-     * @return \Brookin\MarketingAPI\Filtering
-     */
-    public function getFiltering()
-    {
-        return $this->filtering;
-    }
-
-    /**
-     * @param \Brookin\MarketingAPI\Filtering $filtering
-     */
-    public function setFiltering($filtering)
-    {
-        $this->filtering = $filtering;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPage()
-    {
-        return $this->page;
-    }
-
-    /**
-     * @param int $page
-     */
-    public function setPage($page)
-    {
-        $this->page = $page;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPageSize()
-    {
-        return $this->pageSize;
-    }
-
-    /**
-     * @param int $pageSize
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->pageSize = $pageSize;
     }
 
 
