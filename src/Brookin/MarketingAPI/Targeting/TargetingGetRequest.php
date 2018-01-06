@@ -8,10 +8,9 @@
 namespace Brookin\MarketingAPI\Targeting;
 
 
-use Brookin\MarketingAPI\Filtering;
-use Brookin\MarketingAPI\Request;
+use Brookin\MarketingAPI\GetRequest;
 
-class TargetingGetRequest extends Request
+class TargetingGetRequest extends GetRequest
 {
 
     /**
@@ -24,20 +23,6 @@ class TargetingGetRequest extends Request
      */
     public $targetingId;
 
-    /**
-     * @var \Brookin\MarketingAPI\Filtering
-     */
-    protected $filtering;
-
-    /**
-     * @var int
-     */
-    protected $page;
-
-    /**
-     * @var int
-     */
-    protected $pageSize;
 
     /**
      * @return int
@@ -71,53 +56,6 @@ class TargetingGetRequest extends Request
         $this->targetingId = $targetingId;
     }
 
-    /**
-     * @return Filtering
-     */
-    public function getFiltering()
-    {
-        return $this->filtering;
-    }
-
-    /**
-     * @param Filtering $filtering
-     */
-    public function setFiltering($filtering)
-    {
-        $this->filtering = $filtering;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPage()
-    {
-        return $this->page;
-    }
-
-    /**
-     * @param int $page
-     */
-    public function setPage($page)
-    {
-        $this->page = $page;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPageSize()
-    {
-        return $this->pageSize;
-    }
-
-    /**
-     * @param int $pageSize
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->pageSize = $pageSize;
-    }
 
 
 }

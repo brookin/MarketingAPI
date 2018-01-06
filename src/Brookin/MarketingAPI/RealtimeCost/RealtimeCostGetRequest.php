@@ -4,10 +4,9 @@
 namespace Brookin\MarketingAPI\RealtimeCost;
 
 
-use Brookin\MarketingAPI\Filtering;
-use Brookin\MarketingAPI\Request;
+use Brookin\MarketingAPI\GetRequest;
 
-class RealtimeCostGetRequest extends Request
+class RealtimeCostGetRequest extends GetRequest
 {
     /**
      * @var int
@@ -24,20 +23,6 @@ class RealtimeCostGetRequest extends Request
      */
     public $date;
 
-    /**
-     * @var Filtering
-     */
-    public $filtering;
-
-    /**
-     * @var int
-     */
-    public $page;
-
-    /**
-     * @var int
-     */
-    public $pageSize;
 
     /**
      * @return int
@@ -85,54 +70,6 @@ class RealtimeCostGetRequest extends Request
     public function setDate($date)
     {
         $this->date = $date;
-    }
-
-    /**
-     * @return Filtering
-     */
-    public function getFiltering()
-    {
-        return $this->filtering;
-    }
-
-    /**
-     * @param Filtering $filtering
-     */
-    public function setFiltering($filtering)
-    {
-        $this->filtering = $filtering;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPage()
-    {
-        return $this->page;
-    }
-
-    /**
-     * @param int $page
-     */
-    public function setPage($page)
-    {
-        $this->page = $page;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPageSize()
-    {
-        return $this->pageSize;
-    }
-
-    /**
-     * @param int $pageSize
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->pageSize = $pageSize;
     }
 
 

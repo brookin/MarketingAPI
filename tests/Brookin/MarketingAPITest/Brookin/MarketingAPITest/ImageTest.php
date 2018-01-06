@@ -23,7 +23,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
         $response = new ImageAddResponse();
         $client = new ImageService();
 
-        $file = './tests/640x100.png';
+        $file = './tests/160x210.png';
 
         $uploadFile = new UploadFileStruct();
         $uploadFile->setFilePath($file);

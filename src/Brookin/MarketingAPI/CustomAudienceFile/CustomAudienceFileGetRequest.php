@@ -4,9 +4,9 @@
 namespace Brookin\MarketingAPI\CustomAudienceFile;
 
 
-use Brookin\MarketingAPI\Request;
+use Brookin\MarketingAPI\GetRequest;
 
-class CustomAudienceFileGetRequest extends Request
+class CustomAudienceFileGetRequest extends GetRequest
 {
     /**
      * @var int
@@ -23,15 +23,6 @@ class CustomAudienceFileGetRequest extends Request
      */
     protected $customAudienceFileId;
 
-    /**
-     * @var int
-     */
-    protected $page;
-
-    /**
-     * @var int
-     */
-    protected $pageSize;
 
     /**
      * @return int

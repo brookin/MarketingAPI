@@ -25,6 +25,11 @@ class Client
 
     protected $path;
 
+    /**
+     * @var RequestContext
+     */
+    protected $requestContext;
+
     public function __construct($appId = MARKETING_API_APP_ID)
     {
         $this->client = new \GuzzleHttp\Client();
@@ -90,11 +95,6 @@ class Client
         $this->send(self::GET, $this->getRequestPath($request), $request, $response);
     }
 
-    public function isUpload(Request $request)
-    {
-
-    }
-
     public function send($method, $path, Request $request, Response $response)
     {
         $url = $this->urlPrefix.$path;
@@ -115,6 +115,15 @@ class Client
 
         $res = $this->client->request($method, $url, $options);
         $this->afterSend($res, $response);
+
+        $requestContext = new RequestContext(
+            $url,
+            $method,
+            $request,
+            $response,
+            $res
+        );
+        $this->setRequestContext($requestContext);
     }
 
     /**
@@ -145,4 +154,22 @@ class Client
         }
 
     }
+
+    /**
+     * @return RequestContext
+     */
+    public function getRequestContext()
+    {
+        return $this->requestContext;
+    }
+
+    /**
+     * @param RequestContext $requestContext
+     */
+    public function setRequestContext($requestContext)
+    {
+        $this->requestContext = $requestContext;
+    }
+
+
 }

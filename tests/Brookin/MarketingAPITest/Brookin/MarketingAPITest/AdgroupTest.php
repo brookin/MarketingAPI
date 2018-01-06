@@ -27,7 +27,7 @@ class AdgroupTest extends \PHPUnit_Framework_TestCase
         $request->adgroupName = 'adgroupName-'.date('Y-m-d H:i:s');
         $request->beginDate = date('Y-m-d');
         $request->endDate = date('Y-m-d');
-        $request->siteSet = ['SITE_SET_TENCENT_KUAIBAO'];
+        $request->siteSet = ['SITE_SET_QZONE'];
         $request->timeSeries = str_repeat('1', 336);
         $request->productType = 'PRODUCT_TYPE_LINK';
         $request->optimizationGoal = 'OPTIMIZATIONGOAL_CLICK';

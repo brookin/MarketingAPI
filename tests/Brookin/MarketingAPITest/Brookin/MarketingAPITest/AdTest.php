@@ -33,7 +33,7 @@ class AdTest extends \PHPUnit_Framework_TestCase
         $this->assertGreaterThan(0, $response->getAdId(), 'add ad error');
     }
 
-    public function _testUpdate() {
+    public function testUpdate() {
         $request = new AdUpdateRequest();
         $response = new AdUpdateResponse();
 
