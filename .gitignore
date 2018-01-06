@@ -4,3 +4,4 @@ token.php
 *.jpg
 *.png
 composer.lock
+.idea/
