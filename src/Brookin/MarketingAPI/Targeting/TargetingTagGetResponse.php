@@ -10,15 +10,15 @@ namespace Brookin\MarketingAPI\Targeting;
 
 use Brookin\MarketingAPI\Response;
 
-class TargetingTagsGetResponse extends Response
+class TargetingTagGetResponse extends Response
 {
     /**
-     * @var TargetingTagsModel[]
+     * @var TargetingTagModel[]
      */
     protected $list;
 
     /**
-     * @return TargetingTagsModel[]
+     * @return TargetingTagModel[]
      */
     public function getList()
     {
@@ -26,7 +26,7 @@ class TargetingTagsGetResponse extends Response
     }
 
     /**
-     * @param TargetingTagsModel[] $list
+     * @param TargetingTagModel[] $list
      */
     public function setList($list)
     {

@@ -14,9 +14,9 @@ use Brookin\MarketingAPI\Targeting\TargetingAddRequest;
 use Brookin\MarketingAPI\Targeting\TargetingAddResponse;
 use Brookin\MarketingAPI\Targeting\TargetingGetRequest;
 use Brookin\MarketingAPI\Targeting\TargetingGetResponse;
-use Brookin\MarketingAPI\Targeting\TargetingTagsGetRequest;
-use Brookin\MarketingAPI\Targeting\TargetingTagsGetResponse;
-use Brookin\MarketingAPI\Targeting\TargetingTagsService;
+use Brookin\MarketingAPI\Targeting\TargetingTagGetRequest;
+use Brookin\MarketingAPI\Targeting\TargetingTagGetResponse;
+use Brookin\MarketingAPI\Targeting\TargetingTagService;
 use Brookin\MarketingAPI\Targeting\TargetingUpdateRequest;
 use Brookin\MarketingAPI\Targeting\TargetingUpdateResponse;
 
@@ -63,11 +63,11 @@ class TargetingTest extends \PHPUnit_Framework_TestCase
 
     public function testTags()
     {
-        $request = new TargetingTagsGetRequest();
-        $response = new TargetingTagsGetResponse();
+        $request = new TargetingTagGetRequest();
+        $response = new TargetingTagGetResponse();
         $request->setType('REGION');
 
-        $service = new TargetingTagsService();
+        $service = new TargetingTagService();
         $service->get($request, $response);
 
         $this->assertNotNull($response->getList(), 'get targeting tags error');

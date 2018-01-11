@@ -10,7 +10,7 @@ namespace Brookin\MarketingAPI\Targeting;
 
 use Brookin\MarketingAPI\Request;
 
-class TargetingTagsGetRequest extends Request
+class TargetingTagGetRequest extends Request
 {
     /**
      * @var string
