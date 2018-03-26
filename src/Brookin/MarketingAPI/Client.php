@@ -30,12 +30,12 @@ class Client
      */
     protected $requestContext;
 
-    public function __construct($appId = MARKETING_API_APP_ID)
+    public function __construct($accountId)
     {
         $this->client = new \GuzzleHttp\Client();
         $this->defaultOptions = [
             RequestOptions::QUERY => [
-                'access_token' => $this->getAccessToken($appId),
+                'access_token' => $this->getAccessToken(MARKETING_API_APP_ID, $accountId),
                 'timestamp' => time(),
                 'nonce' => md5(time().rand(1,1000))
             ],
@@ -59,17 +59,17 @@ class Client
         return  explode('::', $methodName)[1];
     }
 
-    public static function getTokenKey($appId)
+    public static function getTokenKey($appId, $accountId)
     {
-        return sprintf("%s-%s", MARKETING_API_NAME, $appId);
+        return sprintf("%s-%s-%s", MARKETING_API_NAME, $appId, $accountId);
     }
 
-    public function getAccessToken($appId)
+    public function getAccessToken($appId, $accountId)
     {
         if (defined('MARKETING_API_ACCESS_TOKEN') && !empty(MARKETING_API_ACCESS_TOKEN)) {
             return MARKETING_API_ACCESS_TOKEN;
         } else {
-            $data = \Yii::$app->getCache()->get(self::getTokenKey($appId));
+            $data = \Yii::$app->getCache()->get(self::getTokenKey($appId, $accountId));
             return $data['access_token'];
         }
     }
