@@ -4,7 +4,7 @@
 namespace Brookin\MarketingAPI\Targeting;
 
 
-class TargetingTagsModel
+class TargetingTagModel
 {
     /**
      * @var integer

@@ -69,7 +69,7 @@ class TargetingModel
     }
 
     /**
-     * @return TargetingInfo|[]
+     * @return TargetingInfo
      */
     public function getTargeting()
     {
@@ -77,7 +77,7 @@ class TargetingModel
     }
 
     /**
-     * @param TargetingInfo|[] $targeting
+     * @param TargetingInfo $targeting
      */
     public function setTargeting($targeting)
     {

@@ -26,9 +26,4 @@ class HourlyReportModel extends BaseReportModel
     {
         $this->hour = $hour;
     }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 162b3b82c169cef42e6b92241aab7a6b43f06647
 }

@@ -34,6 +34,8 @@ class ImageTest extends \PHPUnit_Framework_TestCase
         $request->file = $uploadFile;
 
         $client->add($request, $response);
+        println($client->getRequestContext()->getResponseRaw()->getBody()->getContents());
+        println($response);
         $this->assertGreaterThan(0, $response->getHeight(), 'add image error');
     }
 
@@ -49,4 +51,5 @@ class ImageTest extends \PHPUnit_Framework_TestCase
         $client->get($request, $response);
         $this->assertNotNull($response->getList(), 'get image error');
     }
+
 }

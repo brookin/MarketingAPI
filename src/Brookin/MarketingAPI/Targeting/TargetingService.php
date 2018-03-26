@@ -23,7 +23,7 @@ class TargetingService extends RestClient
         $this->send(self::GET, $this->getPath(__METHOD__), $request, $response);
     }
 
-    public function getTags(TargetingTagsGetRequest $request, TargetingTagsGetResponse $response) {
+    public function getTags(TargetingTagsGetRequest $request, TargetingTagGetResponse $response) {
         $this->send(self::GET, $this->getPath(__METHOD__), $request, $response);
     }
 

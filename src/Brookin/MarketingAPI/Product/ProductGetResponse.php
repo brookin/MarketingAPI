@@ -33,6 +33,11 @@ class ProductGetResponse extends Response
     protected $productInfo;
 
     /**
+     * @var SubordinateProductList
+     */
+    protected $subordinateProductList;
+
+    /**
      * @var integer
      */
     protected $createdTime;
@@ -104,6 +109,22 @@ class ProductGetResponse extends Response
     public function setProductInfo($productInfo)
     {
         $this->productInfo = $productInfo;
+    }
+
+    /**
+     * @return SubordinateProductList
+     */
+    public function getSubordinateProductList()
+    {
+        return $this->subordinateProductList;
+    }
+
+    /**
+     * @param SubordinateProductList $subordinateProductList
+     */
+    public function setSubordinateProductList($subordinateProductList)
+    {
+        $this->subordinateProductList = $subordinateProductList;
     }
 
     /**
