@@ -33,13 +33,13 @@ class RequestContext
      */
     protected $responseRaw;
 
-    public function __construct($url, $method, Request $request, Response $response, ResponseInterface $responseRaw = null)
+    public function __construct()
     {
-        $this->url = $url;
-        $this->method = $method;
-        $this->request = $request;
-        $this->response = $response;
-        $this->responseRaw = $responseRaw;
+//        $this->url = $url;
+//        $this->method = $method;
+//        $this->request = $request;
+//        $this->response = $response;
+//        $this->responseRaw = $responseRaw;
     }
 
     /**

@@ -97,7 +97,12 @@ class Client
 
     public function send($method, $path, Request $request, Response $response)
     {
+        $requestContext = new RequestContext();
+        $this->setRequestContext($requestContext);
+
         $url = $this->urlPrefix.$path;
+        $this->getRequestContext()->setUrl($url);
+
         $options = [];
         if ($method == 'GET') {
             $options = array_merge_recursive($this->defaultOptions, [
@@ -113,17 +118,14 @@ class Client
             }
         }
 
-        $res = $this->client->request($method, $url, $options);
-        $this->afterSend($res, $response);
+        $this->getRequestContext()->setMethod($method);
+        $this->getRequestContext()->setRequest($options);
 
-        $requestContext = new RequestContext(
-            $url,
-            $method,
-            $request,
-            $response,
-            $res
-        );
-        $this->setRequestContext($requestContext);
+        $res = $this->client->request($method, $url, $options);
+        $this->getRequestContext()->setResponseRaw($res);
+        $this->afterSend($res, $response);
+        $this->getRequestContext()->setResponse($response);
+        return true;
     }
 
     /**
